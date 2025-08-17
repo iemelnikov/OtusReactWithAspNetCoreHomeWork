@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url';
+п»їimport { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -43,7 +43,7 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            // Проксируем API-запросы на ASP.NET Core
+            // РџСЂРѕРєСЃРёСЂСѓРµРј API-Р·Р°РїСЂРѕСЃС‹ РЅР° ASP.NET Core
             '^/weatherforecast': {
                 target: 'https://localhost:7078',
                 secure: false,

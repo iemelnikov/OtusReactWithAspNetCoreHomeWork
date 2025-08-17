@@ -1,4 +1,4 @@
-namespace ReactWithAspNetCoreApp.Server
+п»їnamespace ReactWithAspNetCoreApp.Server
 {
     public class Program
     {
@@ -8,10 +8,10 @@ namespace ReactWithAspNetCoreApp.Server
             builder.Services.AddControllers();
             if (builder.Environment.IsProduction())
             {
-                // Настраиваем SPA
+                // РќР°СЃС‚СЂР°РёРІР°РµРј SPA
                 builder.Services.AddSpaStaticFiles(options =>
                 {
-                    options.RootPath = "ClientApp"; // Путь к собранным статическим файлам
+                    options.RootPath = "ClientApp"; // РџСѓС‚СЊ Рє СЃРѕР±СЂР°РЅРЅС‹Рј СЃС‚Р°С‚РёС‡РµСЃРєРёРј С„Р°Р№Р»Р°Рј
                 });
             }
             var app = builder.Build();
@@ -26,7 +26,7 @@ namespace ReactWithAspNetCoreApp.Server
             }
             else
             {
-                // В Production обслуживаем статические файлы
+                // Р’ Production РѕР±СЃР»СѓР¶РёРІР°РµРј СЃС‚Р°С‚РёС‡РµСЃРєРёРµ С„Р°Р№Р»С‹
                 app.UseHttpsRedirection();
                 app.UseStaticFiles();
                 app.UseSpaStaticFiles();
