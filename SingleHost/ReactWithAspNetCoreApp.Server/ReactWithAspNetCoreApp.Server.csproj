@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\reactwithaspnetcoreapp.client\reactwithaspnetcoreapp.client.esproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="9.0.8" />
+  </ItemGroup>
+
+  <Target Name="CopyClientApp" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="npm install" WorkingDirectory="../reactwithaspnetcoreapp.client" />
+    <Exec Command="npm run build" WorkingDirectory="../reactwithaspnetcoreapp.client" />
+    <ItemGroup>
+      <ClientFiles Include="../reactwithaspnetcoreapp.client/dist/**/*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ClientFiles)" DestinationFolder="wwwroot/ClientApp/%(RecursiveDir)" />
+  </Target>  
+</Project>
