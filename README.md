@@ -1,4 +1,4 @@
-# OtusReactWithAspNetCoreHomeWork
+# Домашнее задание курса OTUS C# ASP.NET Core: Создать проект для React.js и связать с проектом по API
 
 SingleHost - настройка приложения для развёртывания на 1 хосте + SPA-middleware для production.
 
